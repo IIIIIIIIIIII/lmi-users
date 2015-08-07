@@ -1,0 +1,5 @@
+How to get it up and running:
++ sudo npm install
++ bower install
++ nodemon server
++ curl localhost:3210

@@ -1,0 +1,22 @@
+div.col-sm-6.col-sm-offset-3
+  h3 Create a user
+  form(name="	form" ng-submit="createUser(form.$valid)" novalidate)
+    div.form-group
+      label(for="fullName") Full name (required)
+      input.form-control(id="fullName" name="fullName" type="text" ng-model="user.fullName" placeholder="Your name goes here" required)
+      p(ng-show="form.fullName.$invalid && form.fullName.$dirty") Name is required
+    div.form-group
+      label(for="mailAddress") E-Mail Address (required)
+      input.form-control(id="mailAddress" name="mailAddress" type="email" ng-model="user.email" placeholder="address@somewhere.io" required)
+      p(ng-show="form.mailAddress.$invalid && form.mailAddress.$dirty") A valid e-mail address is required
+    div.form-group
+      label(for="occupation") Occupation
+      div(auto-complete url="/autocomplete")
+    div.form-group
+      label Birthday
+      div.form-control.birthday-chooser
+        select(name="birthday" ng-model="birthday.year" ng-change="validateBirthday(form)" ng-options="label for label in birthday.years")
+        select(ng-model="birthday.month" ng-change="validateBirthday(form)" ng-options="label for label in birthday.months")
+        select(ng-model="birthday.day" ng-change="validateBirthday(form)" ng-options="label for label in birthday.days")
+      p(ng-show="form.birthday.$invalid && form.birthday.$dirty") You must be older than 18 years to proceed
+    button.btn.btn-simple(ng-disabled="form.$invalid") Submit

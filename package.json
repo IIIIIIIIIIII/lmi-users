@@ -1,0 +1,17 @@
+{
+  "name"        : "lmi-users",
+  "version"     : "1.0.0",
+  "main"        : "server.js",
+  "description": "A programming assignment to test some skills and technological familiarity",
+  "author": "Norbert Fekete",
+  "license": "ISC",
+  "dependencies": {
+    "express"        : "latest",
+    "morgan"         : "latest",
+    "compression"    : "latest",
+    "body-parser"    : "latest",
+    "method-override": "latest",
+    "jade"           : "latest",
+    "stylus"         : "latest"
+  }
+}

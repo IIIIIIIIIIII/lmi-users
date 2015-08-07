@@ -1,0 +1,6 @@
+<div>
+  <input class="form-control" type="text" ng-model="searchText" ng-change="search()" placeholder="What do you do">
+  <ul ng-class="{ 'suggestion-list-focus': focus === true, 'suggestion-list': focus === false }">
+    <li ng-repeat="suggestion in suggestions" ng-click="selectSuggestion($index)"> {{ suggestion }}</li>
+  </ul>
+</div>
